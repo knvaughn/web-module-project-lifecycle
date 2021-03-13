@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SelectedUser from './components/SelectedUser/SelectedUser';
+import Followers from './components/Followers/Followers';
 import './App.css';
 
 class App extends Component {
   state = {
-    user: {}
+    user: null
   }
 
   componentDidMount() {
@@ -19,7 +21,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Hello world
+        {
+          this.state.user &&
+          <SelectedUser user={this.state.user} />
+        }
+        <Followers />
       </div>
     )
   }
