@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   getUser = (username) => {
-    console.log('getting user')
     axios.get(`https://api.github.com/users/${username}`)
     .then(response => {
       this.setState({user: response.data})
@@ -41,8 +40,7 @@ class App extends Component {
   getFollowers = (username) => {
     axios.get(`https://api.github.com/users/${username}/followers`)
     .then(response => {
-      this.setState({followers: response.data})
-      console.log(this.state.followers)
+      this.setState({followers: response.data});
     })
     .catch(error => console.log(error));
   }
@@ -54,7 +52,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Github Users</h1>
         <Search submitSearch={this.submitSearch} searchError={this.state.searchError} />
+        <img className="github-chart" src={`https://ghchart.rshah.org/409ba5/${this.state.username}`} alt={`${this.state.username}'s Blue Github Chart`} />
         {
           this.state.user &&
           <SelectedUser user={this.state.user} followers={this.state.followers} />

@@ -12,7 +12,6 @@ class User extends Component {
         axios.get(`https://api.github.com/users/${this.props.user.login}/repos?sort=created&per_page=5`)
         .then(response => {
         this.setState({repositories: response.data})
-        console.log(this.state.repositories)
         })
         .catch(error => console.log(error));
     }
@@ -32,7 +31,7 @@ class User extends Component {
                             <h2>{this.props.user.login}</h2>
                             <p>{this.props.user.location}</p>
                             {
-                                this.props.user.followers &&
+                                this.props.user.followers !== undefined && parseInt(this.props.user.followers) > 0 &&
                                 <p><span>Followers: {this.props.user.followers}</span> | <span>Following: {this.props.user.following}</span></p>
                             }
                             <a href={this.props.user.html_url} target="_BLANK">View Profile</a>
