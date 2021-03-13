@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Search.css';
 
 class Search extends Component {
     state = { 
@@ -16,7 +17,7 @@ class Search extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div className="Search">
                 <form onSubmit={this.handleFormSubmit}>
                     <input 
                         type="search"
@@ -28,7 +29,7 @@ class Search extends Component {
                 </form>
                 {
                     this.props.searchError &&
-                    <p>No results found</p>
+                    <p className="no-results">No results found</p>
                 }
             </div>
         )
