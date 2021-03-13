@@ -29,9 +29,12 @@ class User extends Component {
                             <img src={this.props.user.avatar_url} alt="Profile photo" />
                         </div>
                         <div className="user-card-details">
-                            <h2>{this.props.user.name}</h2>
+                            <h2>{this.props.user.login}</h2>
                             <p>{this.props.user.location}</p>
-                            <p><span>Followers: {this.props.user.followers}</span> | <span>Following: {this.props.user.following}</span></p>
+                            {
+                                this.props.user.followers &&
+                                <p><span>Followers: {this.props.user.followers}</span> | <span>Following: {this.props.user.following}</span></p>
+                            }
                             <a href={this.props.user.html_url} target="_BLANK">View Profile</a>
                         </div>
                     </div>

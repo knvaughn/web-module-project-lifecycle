@@ -57,12 +57,13 @@
     text-decoration: none;
     padding: 8px 20px;
     border-radius: 20px;
-    box-sizing: border-box;
     display: inline-block;
     line-height: 1;
     border: 2px solid #30363d;
     margin-top: 10px;
     transition: all .2s linear;
+    min-width: 130px;
+    text-align: center;
 }
 
 .user-card-details a:hover {

@@ -1,0 +1,18 @@
+.Followers {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Followers .user-card {
+    flex: 0 1 30%;
+    max-width: 400px;
+    margin: 0 10px 20px;
+}
+
+.Followers .user-card-image {
+    width: 150px;
+    height: 150px;
+}

@@ -6,14 +6,29 @@ import './App.css';
 
 class App extends Component {
   state = {
-    user: null
+    user: null,
+    followers: null
   }
 
   componentDidMount() {
-    axios.get('https://api.github.com/users/knvaughn')
+    this.getUser('knvaughn');
+    this.getFollowers('knvaughn');
+  }
+
+  getUser(username) {
+    axios.get(`https://api.github.com/users/${username}`)
     .then(response => {
       this.setState({user: response.data})
       console.log(this.state.user)
+    })
+    .catch(error => console.log(error));
+  }
+
+  getFollowers(username) {
+    axios.get(`https://api.github.com/users/${username}/followers`)
+    .then(response => {
+      this.setState({followers: response.data})
+      console.log(this.state.followers)
     })
     .catch(error => console.log(error));
   }
@@ -25,7 +40,10 @@ class App extends Component {
           this.state.user &&
           <SelectedUser user={this.state.user} />
         }
-        <Followers />
+        {
+          this.state.followers &&
+          <Followers followers={this.state.followers} />
+        }
       </div>
     )
   }

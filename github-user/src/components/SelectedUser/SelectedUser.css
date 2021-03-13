@@ -1,0 +1,11 @@
+.SelectedUser {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.vertical-line {
+    width: 3px;
+    height: 100px;
+    background: #30363d;
+}

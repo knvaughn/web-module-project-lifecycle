@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Repository from '../Repository/Repository';
 
 class Repositories extends Component {
-    state = { 
-
-    }
     render() { 
         return ( 
             <div>
