@@ -7,17 +7,26 @@ import './App.css';
 
 class App extends Component {
   state = {
+    username: 'knvaughn',
     user: null,
     followers: null,
     searchError: false
   }
 
   componentDidMount() {
-    this.getUser('knvaughn');
-    this.getFollowers('knvaughn');
+    this.getUser(this.state.username);
+    this.getFollowers(this.state.username);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.username !== this.state.username) {
+      this.getUser(this.state.username);
+      this.getFollowers(this.state.username);
+    }
   }
 
   getUser = (username) => {
+    console.log('getting user')
     axios.get(`https://api.github.com/users/${username}`)
     .then(response => {
       this.setState({user: response.data})
@@ -39,8 +48,7 @@ class App extends Component {
   }
 
   submitSearch = (searchTerm) => {
-    this.getUser(searchTerm);
-    this.getFollowers(searchTerm);
+    this.setState({username: searchTerm});
   }
 
   render() {

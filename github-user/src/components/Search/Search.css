@@ -10,6 +10,12 @@
     border-radius: 20px 0 0 20px;
 }
 
+.Search input:focus {
+    outline: none;
+    background: #30363d;
+    border-color: #8b949e;
+}
+
 .Search button {
     background: #1f6feb;
     border: 2px solid #1f6feb;
