@@ -1,0 +1,13 @@
+h4 {
+    margin: 10px 0;
+}
+
+h4 a {
+    color: #58a6ff;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+h4 a:hover {
+    text-decoration: underline;
+}

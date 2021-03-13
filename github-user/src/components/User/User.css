@@ -1,0 +1,89 @@
+.user-card {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.user-card-header {
+    display: flex;
+    flex-flow: column nowrap;
+    background: #161b22;
+    padding: 20px;
+    border-radius: 50px 50px 0 0;
+    border: 2px solid #30363d;
+    border-bottom: none;
+}
+
+.user-card-logo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-card-logo img {
+    width: 30px;
+    height: auto;
+}
+
+.user-card-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-card-image {
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 5px solid #30363d;
+    flex: 0 0 auto;
+}
+
+.user-card-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 105%;
+}
+
+.user-card-details p {
+    margin: 5px 0;
+}
+
+.user-card-details a {
+    background: #21262d;
+    color: #c4ccd4;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    line-height: 1;
+    border: 2px solid #30363d;
+    margin-top: 10px;
+    transition: all .2s linear;
+    min-width: 130px;
+    text-align: center;
+}
+
+.user-card-details a:hover {
+    background: #30363d;
+    border-color: #8b949e;
+}
+
+.user-card-repositories {
+    border: 2px solid #30363d;
+    border-top: none;
+    border-radius: 0 0 50px 50px;
+    padding: 20px;
+}
+
+h2 {
+    margin: 0;
+}
+
+h3 {
+    margin: 0 0 15px;
+    text-align: center;
+}
