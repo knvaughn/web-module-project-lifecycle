@@ -10,6 +10,10 @@ class Repositories extends Component {
                         return <Repository repository={repository} key={index} />
                     })
                 }
+                {
+                    this.props.repositories.length === 0 &&
+                    <p>No repositories to show</p>
+                }
             </div>
         )
     }

@@ -7,7 +7,10 @@ class SelectedUser extends Component {
         return ( 
             <div className="SelectedUser">
                 <User user={this.props.user} />
-                <div className="vertical-line"></div>
+                {
+                    this.props.followers && this.props.followers.length > 0 &&
+                    <div className="vertical-line"></div>
+                }
             </div>
         )
     }

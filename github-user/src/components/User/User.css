@@ -37,6 +37,7 @@
     overflow: hidden;
     margin-right: 20px;
     border: 5px solid #30363d;
+    flex: 0 0 auto;
 }
 
 .user-card-image img {
